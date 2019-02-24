@@ -11,7 +11,7 @@ class Conf
      */
     const DELIMITER = '-';
     /**
-     * string position of id (rigiht or left)
+     * string position of id (right or left)
      */
     const ID_POSITION = 'Right';
 }
