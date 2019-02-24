@@ -33,13 +33,4 @@ class SlugTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('',Slug::getSlug(null,null));
     }
 
-    public function testRightId()
-    {
-        $this->assertEquals('g-a-55',Slug::rightId('g-a',55));
-    }
-
-    public function testLeftId()
-    {
-        $this->assertEquals('55-g-a',Slug::leftId('g-a',55));
-    }
 }

@@ -23,41 +23,16 @@ class Slug
     }
 
     /**
-     * add id to slug , using configuration oukhennicheabdelkrim\slug\Conf for id position
-     * @param $slug
+     * add id to slug
+     * @param string $slug
      * @param string | int $id
      * @return string
      */
+
     public static function addId($slug, $id)
     {
-        return call_user_func_array('oukhennicheabdelkrim\slug\Slug::' . strtolower(Conf::ID_POSITION) . 'Id', [$slug, $id]);
-    }
-
-    /**
-     * add id to the slug on the left
-     * @param string $slug
-     * @param string | int $id
-     * @return string
-     */
-
-    public static function leftId($slug, $id)
-    {
         if ($id === null) return $slug;
         if(empty($slug)) return (string)$id;
-        return $id . Conf::DELIMITER . $slug;
-    }
-
-    /**
-     * add id to the slug on the right
-     * @param string $slug
-     * @param string | int $id
-     * @return string
-     */
-
-    public static function rightId($slug, $id)
-    {
-        if ($id === null) return $slug;
-        if(empty($slug)) return (string)$id;
-        return $slug . Conf::DELIMITER . $id;
+        return ['left'=>$id . Conf::DELIMITER . $slug,'right'=>$slug . Conf::DELIMITER . $id][strtolower(Conf::ID_POSITION)];
     }
 }
