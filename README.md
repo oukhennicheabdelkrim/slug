@@ -24,7 +24,7 @@ $mySlug = Slug::getSlug($title); // my-title
 $mySlug = Slug::getSlug($title,$titleId); // my-title-3
 
 ```
-# 2.2. Configuration
+## 2.2. Configuration
 
 Configuration was designed to be as flexible as possible,you can change the delimiter and position of id in the configuration class ```oukhennicheabdelkrim\slug\Conf```.
 
